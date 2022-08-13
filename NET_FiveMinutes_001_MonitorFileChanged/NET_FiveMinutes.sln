@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes", "NET_FiveMinutes.csproj", "{6B674FAA-54CE-49FC-BFF3-EBB8B54C2685}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET_FiveMinutes_001_MonitorFileChanged", "NET_FiveMinutes_001_MonitorFileChanged.csproj", "{6B674FAA-54CE-49FC-BFF3-EBB8B54C2685}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_002_Crawl", "..\NET_FiveMinutes_002_CrawlZhihu\NET_FiveMinutes_002_Crawl.csproj", "{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6B674FAA-54CE-49FC-BFF3-EBB8B54C2685}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B674FAA-54CE-49FC-BFF3-EBB8B54C2685}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B674FAA-54CE-49FC-BFF3-EBB8B54C2685}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
