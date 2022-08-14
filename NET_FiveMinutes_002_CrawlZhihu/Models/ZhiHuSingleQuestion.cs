@@ -6,28 +6,31 @@ using System.Threading.Tasks;
 
 namespace NET_FiveMinutes_002_CrawlZhiHu.Models
 {
-    public class ZhiHuHotModel
+    public class ZhiHuSingleQuestion
     {
         /// <summary>
         /// ID
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// 热榜火热程度
+        /// 回答者姓名
         /// </summary>
-        public string hot { get; set; }
+        public string AuthorName { get; set; }
         /// <summary>
-        /// 热榜标题
+        /// 回答者头像
         /// </summary>
-        public string Title { get; set; }
+        public string AuthorProfileImage { get; set; }
         /// <summary>
-        /// 热榜Url
+        /// 回答者空间Url
         /// </summary>
-        public string Url { get; set; }
+        public string AuthorUrl { get; set; }
         /// <summary>
-        /// 热榜描述
+        /// 回答
         /// </summary>
-
-        public string Description { get; set; }
+        public string Answer { get; set; }
+        /// <summary>
+        /// 点赞数
+        /// </summary>
+        public string LikeNumber { get; set; }
     }
 }

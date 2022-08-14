@@ -174,9 +174,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Common\BatchConfigs.cs" />
+    <Compile Include="Common\ComboxBinding.cs" />
     <Compile Include="Common\Logger.cs" />
-    <Compile Include="Interfaces\IBaseCrawl.cs" />
+    <Compile Include="Const\CrawlEnum.cs" />
+    <Compile Include="Interfaces\IJDService.cs" />
     <Compile Include="Interfaces\IZhiHuService.cs" />
+    <Compile Include="Models\JDConfigModel.cs" />
+    <Compile Include="Models\RootConfigModel.cs" />
+    <Compile Include="Models\JDCategory.cs" />
+    <Compile Include="Models\JDCommodity.cs" />
+    <Compile Include="Models\JDCommodityPrice.cs" />
+    <Compile Include="Models\ZhiHuSingleQuestion.cs" />
+    <Compile Include="Services\JDService.cs" />
     <Compile Include="Services\ZhiHuService.cs" />
     <Compile Include="Form_ZhiHu.cs">
       <SubType>Form</SubType>

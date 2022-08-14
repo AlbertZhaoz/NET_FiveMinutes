@@ -1,8 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace NET_FiveMinutes_002_CrawlZhiHu.Models
+namespace NET_FiveMinutes_002_CrawlZhihu.Models
 {
-    public class ZhiHuConfigModel
+    public class JDConfigModel
     {
         /// <summary>
         /// 
@@ -59,6 +63,6 @@ namespace NET_FiveMinutes_002_CrawlZhiHu.Models
         /// <summary>
         /// 
         /// </summary>
-        public List <string > Url { get; set; }
+        public List<string> Url { get; set; }
     }
 }

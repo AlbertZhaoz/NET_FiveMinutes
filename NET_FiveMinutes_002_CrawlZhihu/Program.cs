@@ -15,13 +15,16 @@ namespace NET_FiveMinutes_002_CrawlZhihu
         static void Main()
         {
             BatchConfigs.InitConfigs();
-
-           // BatchConfigs.GetService().BuildServiceProvider().GetRequiredService<IZhiHuService>().CrawlHot();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form_ZhiHu());
-            
+            Application.Run(new Form_ZhiHu(BatchConfigs
+                .Services
+                .BuildServiceProvider()
+                .GetRequiredService<IZhiHuService>(),
+                BatchConfigs
+                    .Services
+                    .BuildServiceProvider()
+                    .GetRequiredService<IJDService>()));
         }
     }
 }

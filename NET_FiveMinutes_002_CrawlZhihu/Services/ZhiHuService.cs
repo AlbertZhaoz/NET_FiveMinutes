@@ -12,7 +12,7 @@ using NET_FiveMinutes_002_CrawlZhiHu.Models;
 
 namespace NET_FiveMinutes_002_CrawlZhihu.Services
 {
-    public class ZhiHuService:IBaseCrawl,IZhiHuService
+    public class ZhiHuService:IZhiHuService
     {
         private readonly IOptionsSnapshot<ZhiHuConfigModel> _options; // 依赖注入可选项
         private static Logger logger = new Logger(typeof(ZhiHuService));// 日志服务
@@ -98,53 +98,102 @@ namespace NET_FiveMinutes_002_CrawlZhihu.Services
 
         public List<ZhiHuHotModel> CrawlHot()
         {
-            List<ZhiHuHotModel> hots = new List<ZhiHuHotModel>();
-            foreach (var url in _options.Value.Url)
+            var hots = new List<ZhiHuHotModel>();
+            var url = _options.Value.Url[0];
+            // 开始下载Html
+            var html = DownloadUrl(url);
+            // 使用HtmlAgilityPack分析Html
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(html);
+            // 取热榜div
+            var hotDivPath = "//div/section/div[2]";
+            var hotNodeList = doc.DocumentNode.SelectNodes(hotDivPath);
+            var id = 1;
+            foreach (var node in hotNodeList)
             {
-                // 开始下载Html
-                var html = DownloadUrl(url);
-                // 使用HtmlAgilityPack分析Html
-                var doc = new HtmlAgilityPack.HtmlDocument();
-                doc.LoadHtml(html);
-                // 取热榜div
-                var hotDivPath = "//div/section/div[2]";
-                var hotNodeList = doc.DocumentNode.SelectNodes(hotDivPath);
-                foreach (var node in hotNodeList)
-                {
-                    var hotTitlePath = "//a/h2";
-                    var hotUrlPath = "//div/a";
-                    var hotDescriptionPath = "//div/a/p";
-                    var hotPath = "//div/div";
-                    string secondHtml = node.OuterHtml;
+                var hotTitlePath = "//a/h2";
+                var hotUrlPath = "//div/a";
+                var hotDescriptionPath = "//div/a/p";
+                var hotPath = "//div/div";
+                string secondHtml = node.OuterHtml;
 
-                    // 使用HtmlAgilityPack继续分析div里面的内容，取出Url和标题
-                    if (secondHtml != null)
+                // 使用HtmlAgilityPack继续分析div里面的内容，取出Url和标题
+                if (secondHtml != null)
+                {
+                    try
                     {
-                        try
+                        var secondDoc = new HtmlAgilityPack.HtmlDocument();
+                        secondDoc.LoadHtml(secondHtml);
+                        var hotTitleNode = secondDoc.DocumentNode.SelectSingleNode(hotTitlePath).InnerText;
+                        var hotUrlNode = secondDoc.DocumentNode.SelectSingleNode(hotUrlPath).Attributes["href"].Value;
+                        var hotDescriptionNode = "";
+                        if (secondDoc.DocumentNode.SelectSingleNode(hotDescriptionPath) != null)
                         {
-                            var secondDoc = new HtmlAgilityPack.HtmlDocument();
-                            secondDoc.LoadHtml(secondHtml);
-                            var hotTitleNode = secondDoc.DocumentNode.SelectSingleNode(hotTitlePath).InnerText;
-                            var hotUrlNode = secondDoc.DocumentNode.SelectSingleNode(hotUrlPath).Attributes["href"].Value;
-                            var hotDescriptionNode = "";
-                            if(secondDoc.DocumentNode.SelectSingleNode(hotDescriptionPath)!=null)
-                            {
-                                hotDescriptionNode = secondDoc.DocumentNode.SelectSingleNode(hotDescriptionPath).InnerText;
-                            }
-                            var hotNode = secondDoc.DocumentNode.SelectSingleNode(hotPath).InnerText;
-                            hots.Add(new ZhiHuHotModel() { Title = hotTitleNode, Url = hotUrlNode, Description = hotDescriptionNode, hot = hotNode });
+                            hotDescriptionNode = secondDoc.DocumentNode.SelectSingleNode(hotDescriptionPath).InnerText;
                         }
-                        catch (Exception exception)
-                        {
-                            logger.Error(exception.Message);
-                        }
+                        var hotNode = secondDoc.DocumentNode.SelectSingleNode(hotPath).InnerText;
+                        hots.Add(new ZhiHuHotModel() { Id = id, hot = hotNode, Title = hotTitleNode, Url = hotUrlNode, Description = hotDescriptionNode });
+                        id++;
                     }
-                    else
+                    catch (Exception exception)
                     {
-                        logger.Error("Html为空");
+                        logger.Error(exception.Message);
                     }
                 }
+                else
+                {
+                    logger.Error("Html为空");
+                }
             }
+            return hots;
+        }
+        public List<ZhiHuSingleQuestion> CrawlSingleQuestion(string questionID)
+        {
+            var hots = new List<ZhiHuSingleQuestion>();
+            var url = _options.Value.Url[1]+questionID;
+            // 开始下载Html
+            var html = DownloadUrl(url);
+            // 使用HtmlAgilityPack分析Html
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(html);
+            // 取回答div
+            var hotDivPath = "//*[@class='QuestionAnswers-answers']";
+            var hotDivNode = doc.DocumentNode.SelectSingleNode(hotDivPath);
+            
+            // 取总回答数
+            var totalAnswer = "/div/div/div/div/h4/span";
+            var totalAnswerNode = doc.DocumentNode.SelectSingleNode(hotDivPath+ totalAnswer);
+
+
+            // 获取包装好回答div
+            var firstAnswerPath = "//*[@class='ContentItem AnswerItem']";
+            var answerNodeList = doc.DocumentNode.SelectNodes(firstAnswerPath);
+            var i = 1;
+
+            foreach (var answerNode in answerNodeList)
+            {
+                string thirdHtml = answerNode.OuterHtml;
+                var answerInfoDoc = new HtmlAgilityPack.HtmlDocument();
+                answerInfoDoc.LoadHtml(thirdHtml);
+
+                // 获取回答者信息div
+                var authorInfoPath = "//*[@class='AuthorInfo']/meta";
+                var authorName = answerInfoDoc.DocumentNode.SelectNodes(authorInfoPath)[0].Attributes["content"].Value;
+                var authorProfileImage = answerInfoDoc.DocumentNode.SelectNodes(authorInfoPath)[1].Attributes["content"].Value;
+                var authorUrl = answerInfoDoc.DocumentNode.SelectNodes(authorInfoPath)[2].Attributes["content"].Value;
+                var answerPath = "//*[@class='RichContent-inner']/span/p";
+                var answer = answerInfoDoc.DocumentNode.SelectSingleNode(answerPath).InnerText;
+                hots.Add(new ZhiHuSingleQuestion()
+                {
+                    Id = i,
+                    AuthorName = authorName,
+                    AuthorProfileImage = authorProfileImage,
+                    AuthorUrl = authorUrl,
+                    Answer = answer
+                }); 
+                i++;
+            }
+
             return hots;
         }
     }
