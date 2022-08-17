@@ -76,9 +76,8 @@ namespace NET_FiveMinutes_004_EncryptPlay
                         var fileEncrypt = fileEncryptList.First(f=>f.FileSaltKeyMd5 == Md5Encrypt.Encrypt(textBox_DencryptPassword.Text));
                         if(fileEncrypt != null)
                         {
-                            _playDestinationVideoPath = fileEncrypt.FileOrigin;
                             // 判断本地文件是否存在，如果不存在，仍然进行解密操作
-                            if(File.Exists(_playDestinationVideoPath))
+                            if(!File.Exists(_playDestinationVideoPath))
                             {
                                 _playDestinationVideoPath =_playDestinationVideoPath +"\\"+ Path.GetFileNameWithoutExtension(_playOriginVideoPath);
                                 AESEncrypt.DecryptFile(_playOriginVideoPath
@@ -86,6 +85,7 @@ namespace NET_FiveMinutes_004_EncryptPlay
                                     ,textBox_DencryptPassword.Text
                                     ,UpdateProgress);   
                             }
+                            _playDestinationVideoPath = fileEncrypt.FileOrigin;
                             this.DialogResult = DialogResult.OK;
                         }
                         else
