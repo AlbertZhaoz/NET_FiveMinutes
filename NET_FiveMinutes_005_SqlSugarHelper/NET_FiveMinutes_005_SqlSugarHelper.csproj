@@ -151,10 +151,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CfgFiles\HttpHeaderConfig.xaml.cs">
-      <DependentUpon>DbConnect.json</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
     <Compile Include="Common\BatchConfigs.cs" />
     <Compile Include="Interfaces\ISqlServerService.cs" />
     <Compile Include="Models\DbConnectModel.cs" />
