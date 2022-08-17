@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET_FiveMinutes_001_Monitor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_002_Crawl", "..\NET_FiveMinutes_002_CrawlZhihu\NET_FiveMinutes_002_Crawl.csproj", "{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_003_Encrypt", "..\NET_FiveMinutes_003_Encrypt\NET_FiveMinutes_003_Encrypt.csproj", "{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47CC45FC-7224-4F89-B6A1-43BEAE8899D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
