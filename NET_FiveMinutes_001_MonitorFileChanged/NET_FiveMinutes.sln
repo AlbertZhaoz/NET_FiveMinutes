@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_002_Crawl",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_003_Encrypt", "..\NET_FiveMinutes_003_Encrypt\NET_FiveMinutes_003_Encrypt.csproj", "{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_004_EncryptPlay", "..\NET_FiveMinutes_004_EncryptPlay\NET_FiveMinutes_004_EncryptPlay.csproj", "{8180215C-958C-499B-8E8A-D04B9749EC5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_005_SqlSugarHelper", "..\NET_FiveMinutes_005_SqlSugarHelper\NET_FiveMinutes_005_SqlSugarHelper.csproj", "{0812AC91-342B-4CC1-851C-649863DBE32A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15B9C5FB-FF91-4184-BE4D-2990C0C1E22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8180215C-958C-499B-8E8A-D04B9749EC5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8180215C-958C-499B-8E8A-D04B9749EC5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8180215C-958C-499B-8E8A-D04B9749EC5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8180215C-958C-499B-8E8A-D04B9749EC5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0812AC91-342B-4CC1-851C-649863DBE32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0812AC91-342B-4CC1-851C-649863DBE32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0812AC91-342B-4CC1-851C-649863DBE32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0812AC91-342B-4CC1-851C-649863DBE32A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
