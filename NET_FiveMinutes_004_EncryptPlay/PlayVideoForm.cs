@@ -95,5 +95,81 @@ namespace NET_FiveMinutes_004_EncryptPlay
                 dencryptVideoForm.Dispose();
             }
         }
+
+        private void trackBar_Volume_Scroll(object sender, EventArgs e)
+        {
+            int vol = this.trackBar_Volume.Value;
+            vlcControl1.Audio.Volume = vol;
+        }
+
+        private void uiSymbolButton_Forw_Click(object sender, EventArgs e)
+        {
+            if (this.vlcControl1.IsPlaying) this.vlcControl1.Pause();
+            float cur_time = vlcControl1.Position;
+            cur_time += 0.020f;
+            if (cur_time >= 1) { return; }
+            vlcControl1.Position = cur_time;
+            vlcControl1.Play();
+        }
+
+        private void uiSymbolButton_Back_Click(object sender, EventArgs e)
+        {
+            if (this.vlcControl1.IsPlaying) this.vlcControl1.Pause();
+            float cur_time = vlcControl1.Position;
+            cur_time -= 0.020f;
+            if (cur_time >= 1) { return; }
+            vlcControl1.Position = cur_time;
+            vlcControl1.Play();
+        }
+
+        private void vlcControl1_Playing(object sender, Vlc.DotNet.Core.VlcMediaPlayerPlayingEventArgs e)
+        {
+            this.lblTotal.Invoke(new Action(()=>
+            {
+                this.lblTotal.Text = this.vlcControl1.GetCurrentMedia().Duration.Duration().ToString();
+            }));
+        }
+
+        private void vlcControl1_PositionChanged(object sender, Vlc.DotNet.Core.VlcMediaPlayerPositionChangedEventArgs e)
+        {
+
+        }
+
+        private void trackBar_Progress_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_X_Click(object sender, EventArgs e)
+        {
+            switch (this.label_X.Text)
+            {
+                case "倍数X1":
+                    this.label_X.Text = "倍数X1.5";
+                    this.vlcControl1.Rate = 1.5f;
+                    break;
+                case "倍数X1.5":
+                    this.label_X.Text = "倍数X2";
+                    this.vlcControl1.Rate = 2f;
+                    break;
+                default:
+                    this.label_X.Text = "倍数X1";
+                    this.vlcControl1.Rate = 1f;
+                    break;
+            }
+        }
+
+        private void PlayVideoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                this.vlcControl1.Stop();
+                this.vlcControl1.Dispose();
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+        }
     }
 }

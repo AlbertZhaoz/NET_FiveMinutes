@@ -29,42 +29,57 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.uiSymbolButton_ChooseFile = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton_Forw = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton_Back = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton_Pause = new Sunny.UI.UISymbolButton();
             this.uiSymbolButton_Play = new Sunny.UI.UISymbolButton();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
-            this.label1 = new System.Windows.Forms.Label();
+            this.trackBar_Volume = new System.Windows.Forms.TrackBar();
+            this.label_X = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.trackBar_Progress = new System.Windows.Forms.TrackBar();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.vlcControl1 = new Vlc.DotNet.Forms.VlcControl();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_Volume)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_Progress)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.uiSymbolButton_ChooseFile);
             this.panel1.Controls.Add(this.uiSymbolButton_Forw);
             this.panel1.Controls.Add(this.uiSymbolButton_Back);
             this.panel1.Controls.Add(this.uiSymbolButton_Pause);
             this.panel1.Controls.Add(this.uiSymbolButton_Play);
-            this.panel1.Controls.Add(this.trackBar2);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.trackBar_Volume);
+            this.panel1.Controls.Add(this.label_X);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 475);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(865, 56);
             this.panel1.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(680, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.TabIndex = 122;
+            this.label2.Text = "音量：";
             // 
             // uiSymbolButton_ChooseFile
             // 
@@ -108,6 +123,7 @@
             this.uiSymbolButton_Forw.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.uiSymbolButton_Forw.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton_Forw.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiSymbolButton_Forw.Click += new System.EventHandler(this.uiSymbolButton_Forw_Click);
             // 
             // uiSymbolButton_Back
             // 
@@ -129,6 +145,7 @@
             this.uiSymbolButton_Back.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.uiSymbolButton_Back.TipsFont = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiSymbolButton_Back.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiSymbolButton_Back.Click += new System.EventHandler(this.uiSymbolButton_Back_Click);
             // 
             // uiSymbolButton_Pause
             // 
@@ -174,34 +191,36 @@
             this.uiSymbolButton_Play.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
             this.uiSymbolButton_Play.Click += new System.EventHandler(this.uiSymbolButton_Play_Click);
             // 
-            // trackBar2
+            // trackBar_Volume
             // 
-            this.trackBar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.trackBar2.AutoSize = false;
-            this.trackBar2.Location = new System.Drawing.Point(727, 28);
-            this.trackBar2.Maximum = 120;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(126, 16);
-            this.trackBar2.TabIndex = 6;
-            this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar2.Value = 100;
+            this.trackBar_Volume.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar_Volume.AutoSize = false;
+            this.trackBar_Volume.Location = new System.Drawing.Point(727, 28);
+            this.trackBar_Volume.Maximum = 120;
+            this.trackBar_Volume.Name = "trackBar_Volume";
+            this.trackBar_Volume.Size = new System.Drawing.Size(126, 16);
+            this.trackBar_Volume.TabIndex = 6;
+            this.trackBar_Volume.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar_Volume.Value = 100;
+            this.trackBar_Volume.Scroll += new System.EventHandler(this.trackBar_Volume_Scroll);
             // 
-            // label1
+            // label_X
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(667, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "倍速：1";
+            this.label_X.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_X.AutoSize = true;
+            this.label_X.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_X.Font = new System.Drawing.Font("Bahnschrift Condensed", 10F);
+            this.label_X.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label_X.Location = new System.Drawing.Point(6, 28);
+            this.label_X.Name = "label_X";
+            this.label_X.Size = new System.Drawing.Size(45, 17);
+            this.label_X.TabIndex = 3;
+            this.label_X.Text = "倍数X1";
+            this.label_X.Click += new System.EventHandler(this.label_X_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.trackBar1);
+            this.panel3.Controls.Add(this.trackBar_Progress);
             this.panel3.Controls.Add(this.lblTotal);
             this.panel3.Controls.Add(this.lblTime);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -210,17 +229,18 @@
             this.panel3.Size = new System.Drawing.Size(865, 16);
             this.panel3.TabIndex = 5;
             // 
-            // trackBar1
+            // trackBar_Progress
             // 
-            this.trackBar1.AutoSize = false;
-            this.trackBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trackBar1.Enabled = false;
-            this.trackBar1.Location = new System.Drawing.Point(60, 0);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(745, 16);
-            this.trackBar1.TabIndex = 1;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar_Progress.AutoSize = false;
+            this.trackBar_Progress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.trackBar_Progress.Enabled = false;
+            this.trackBar_Progress.Location = new System.Drawing.Point(60, 0);
+            this.trackBar_Progress.Maximum = 100;
+            this.trackBar_Progress.Name = "trackBar_Progress";
+            this.trackBar_Progress.Size = new System.Drawing.Size(745, 16);
+            this.trackBar_Progress.TabIndex = 1;
+            this.trackBar_Progress.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar_Progress.ValueChanged += new System.EventHandler(this.trackBar_Progress_ValueChanged);
             // 
             // lblTotal
             // 
@@ -268,6 +288,8 @@
             this.vlcControl1.VlcLibDirectory = null;
             this.vlcControl1.VlcMediaplayerOptions = null;
             this.vlcControl1.VlcLibDirectoryNeeded += new System.EventHandler<Vlc.DotNet.Forms.VlcLibDirectoryNeededEventArgs>(this.vlcControl1_VlcLibDirectoryNeeded);
+            this.vlcControl1.Playing += new System.EventHandler<Vlc.DotNet.Core.VlcMediaPlayerPlayingEventArgs>(this.vlcControl1_Playing);
+            this.vlcControl1.PositionChanged += new System.EventHandler<Vlc.DotNet.Core.VlcMediaPlayerPositionChangedEventArgs>(this.vlcControl1_PositionChanged);
             // 
             // PlayVideoForm
             // 
@@ -279,12 +301,13 @@
             this.Controls.Add(this.panel1);
             this.Name = "PlayVideoForm";
             this.Text = "PlayVideoForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PlayVideoForm_FormClosing);
             this.Load += new System.EventHandler(this.PlayVideoForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_Volume)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_Progress)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vlcControl1)).EndInit();
             this.ResumeLayout(false);
@@ -294,10 +317,10 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TrackBar trackBar2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TrackBar trackBar_Volume;
+        private System.Windows.Forms.Label label_X;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.TrackBar trackBar_Progress;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblTime;
         private Sunny.UI.UISymbolButton uiSymbolButton_Play;
@@ -307,5 +330,6 @@
         private System.Windows.Forms.Panel panel2;
         private Vlc.DotNet.Forms.VlcControl vlcControl1;
         private Sunny.UI.UISymbolButton uiSymbolButton_ChooseFile;
+        private System.Windows.Forms.Label label2;
     }
 }
