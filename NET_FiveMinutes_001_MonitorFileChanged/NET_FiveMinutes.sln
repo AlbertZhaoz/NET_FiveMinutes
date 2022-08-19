@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_004_Encrypt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_005_SqlSugarHelper", "..\NET_FiveMinutes_005_SqlSugarHelper\NET_FiveMinutes_005_SqlSugarHelper.csproj", "{0812AC91-342B-4CC1-851C-649863DBE32A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_006_AlbertToolHelperDesktop", "NET_FiveMinutes_006_AlbertToolHelperDesktop\NET_FiveMinutes_006_AlbertToolHelperDesktop.csproj", "{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0812AC91-342B-4CC1-851C-649863DBE32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0812AC91-342B-4CC1-851C-649863DBE32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0812AC91-342B-4CC1-851C-649863DBE32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

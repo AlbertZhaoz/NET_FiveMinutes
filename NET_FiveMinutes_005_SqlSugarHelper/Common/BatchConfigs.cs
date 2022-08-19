@@ -22,8 +22,7 @@ namespace NET_FiveMinutes_005_SqlSugarHelper.Common
             Services.AddOptions().Configure<DbConnectModel>(e => configuration.Bind(e))
                 .Configure<SqlServerStr>(e => configuration.GetSection("SqlServerStr").Bind(e))
                 .Configure<MySQLStr>(e => configuration.GetSection("MySQLStr").Bind(e));
-
-            // Services.AddScoped<IZhiHu_Service,ZhiHu_Service>();
+            
             // 批量注册DI服务
             Services.Scan(scan => scan
                 .FromAssemblies(Assembly.GetAssembly(typeof(BatchConfigs)))
