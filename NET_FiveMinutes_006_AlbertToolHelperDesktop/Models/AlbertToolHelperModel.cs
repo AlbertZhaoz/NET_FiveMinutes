@@ -1,4 +1,5 @@
-﻿using SqlSugar;
+﻿using System;
+using SqlSugar;
 
 namespace NET_FiveMinutes_006_AlbertToolHelperDesktop.Models
 {
@@ -10,7 +11,9 @@ namespace NET_FiveMinutes_006_AlbertToolHelperDesktop.Models
         public string Sort { get; set; }
         public string Name { get; set; }
         public string Link { get; set; }
+        [SugarColumn(Length = Int32.MaxValue)]
         public string Description { get; set; }
+        [SugarColumn(Length = Int32.MaxValue)]
         public string SupportVersion { get; set; }
         public string Doc { get; set; }
     }

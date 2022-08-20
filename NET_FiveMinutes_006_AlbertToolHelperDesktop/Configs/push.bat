@@ -8,4 +8,4 @@ cd %3
 git add .
 git commit -m "update readme"
 git push
-pause
+exit

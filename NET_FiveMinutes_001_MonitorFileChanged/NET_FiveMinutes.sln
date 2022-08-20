@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_004_Encrypt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_005_SqlSugarHelper", "..\NET_FiveMinutes_005_SqlSugarHelper\NET_FiveMinutes_005_SqlSugarHelper.csproj", "{0812AC91-342B-4CC1-851C-649863DBE32A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_006_AlbertToolHelperDesktop", "NET_FiveMinutes_006_AlbertToolHelperDesktop\NET_FiveMinutes_006_AlbertToolHelperDesktop.csproj", "{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_006_AlbertToolHelperDesktop", "..\NET_FiveMinutes_006_AlbertToolHelperDesktop\NET_FiveMinutes_006_AlbertToolHelperDesktop.csproj", "{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

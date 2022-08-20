@@ -1,7 +1,7 @@
 ﻿{
   "DbConnectStr": {
     "SqlServerStr": {
-      "ConnectStr": "Server = 139.196.89.233; Database = OnlineTools; uid = sa; pwd = xxx."
+      "ConnectStr": "Server = 139.196.89.233; Database = OnlineTools; uid = sa; pwd = xxxx."
     },
     "MySQLStr": {
       "ConnectStr": ""
