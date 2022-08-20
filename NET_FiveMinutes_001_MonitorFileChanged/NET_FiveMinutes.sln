@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_005_SqlSuga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_006_AlbertToolHelperDesktop", "..\NET_FiveMinutes_006_AlbertToolHelperDesktop\NET_FiveMinutes_006_AlbertToolHelperDesktop.csproj", "{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_007_MarkdownMiddleware", "..\NET_FiveMinutes_007_MarkdownMiddleware\NET_FiveMinutes_007_MarkdownMiddleware.csproj", "{A0419630-114A-4E01-9149-C50EF343EC36}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDFD38F7-B5C6-402A-8FE1-A2A8B6326DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0419630-114A-4E01-9149-C50EF343EC36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0419630-114A-4E01-9149-C50EF343EC36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0419630-114A-4E01-9149-C50EF343EC36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0419630-114A-4E01-9149-C50EF343EC36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
