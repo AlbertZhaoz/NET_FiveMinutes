@@ -11,6 +11,8 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CliWrap;
+using CliWrap.Buffered;
 using Microsoft.Extensions.Options;
 using NET_FiveMinutes_006_AlbertToolHelperDesktop.DTOs;
 
@@ -35,7 +37,6 @@ namespace NET_FiveMinutes_006_AlbertToolHelperDesktop
         {
             ComboxBinding.BindEnumToComboBox<AlbertToolHelperEnum>(this.uiComboBox1);
             BindingDtSource(AlbertToolHelperEnum.ToolHelper.ToString());
-            DeleteFolder();
         }
 
         private void uiAvatar_OK_Click(object sender, EventArgs e)
@@ -120,22 +121,19 @@ namespace NET_FiveMinutes_006_AlbertToolHelperDesktop
         {
             foreach (DataGridViewRow row in this.uiDV.SelectedRows)
             {
-                _iServerService
-                    .GetSqlClient().Deleteable<AlbertToolHelperModel>().In(row.Cells["Id"].Value).ExecuteCommand();
+                try
+                {
+                    _iServerService
+                        .GetSqlClient().Deleteable<AlbertToolHelperModel>().In(row.Cells["Id"].Value).ExecuteCommand();
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show(exception.Message);
+                }
+               
             }
+            BindingDtSource(this.uiComboBox1.SelectedText);
             MessageBox.Show("Delete OK");
-        }
-
-        private void uiAvatar_Update_Click(object sender, EventArgs e)
-        {
-            dtSource = this.uiDV.DataSource as DataTable;
-            var dc= _iServerService
-                .GetSqlClient()
-                .Utilities
-                .DataTableToDictionaryList(dtSource);//转成字典
-            _iServerService
-                .GetSqlClient().Updateable(dc).AS(typeof(AlbertToolHelperModel).Name).WhereColumns("Id").ExecuteCommand();
-            MessageBox.Show("Update OK");
         }
 
         private void uiComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -168,29 +166,22 @@ namespace NET_FiveMinutes_006_AlbertToolHelperDesktop
         private void uiAvatar_Clear_Click(object sender, EventArgs e)
         {
             DeleteFolder();
+            Task.Delay(2000);
             MessageBox.Show("Clear OK");
         }
 
-        private void uiAvatar_Push_Click(object sender, EventArgs e)
+        private async void uiAvatar_Push_Click(object sender, EventArgs e)
         {
-            // 异步线程执行bat脚本
-            Task.Run(()=>
-            {
-                using (Process myPro = new Process())
-                {
-                    // 传入三个参数，源md文件，目的md文件夹，目的git根目录
-                    ProcessStartInfo  pi= new ProcessStartInfo(
-                        AppDomain.CurrentDomain.BaseDirectory+"Configs\\push.bat",
-                        $"{AppDomain.CurrentDomain.BaseDirectory+"TempExcel\\README.md"} {_option.Value.DestinationDirectory} {_option.Value.DestinationRootDirectory}");//第二个参数为传入的参数，string类型以空格分隔各个参数  
-                    pi.UseShellExecute = false;  
-                    pi.CreateNoWindow = true;
-                    myPro.StartInfo = pi;
-                    myPro.Start();
-                    myPro.WaitForExit();
-                }
-                MessageBox.Show("Github Update OK");
-            });           
-           
+            var args = $"copy \"{AppDomain.CurrentDomain.BaseDirectory}TempExcel\\README.md\" \"{_option.Value.DestinationDirectory}\"";
+            await CliWrapHelper.CallPowerShell(args, _option.Value.DestinationDirectory);
+            await CliWrapHelper.CallGit("Update README.md",_option.Value.DestinationDirectory);
+
+            MessageBox.Show("Github Update OK");
+        }
+
+        private void uiDV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

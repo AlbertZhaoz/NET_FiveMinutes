@@ -29,27 +29,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.uiAvatar_Update = new Sunny.UI.UIAvatar();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.uiAvatar_Push = new Sunny.UI.UIAvatar();
+            this.uiAvatar_Clear = new Sunny.UI.UIAvatar();
             this.uiComboBox1 = new Sunny.UI.UIComboBox();
             this.uiAvatar_Delete = new Sunny.UI.UIAvatar();
             this.uiAvatar_Add = new Sunny.UI.UIAvatar();
             this.uiAvatar_OK = new Sunny.UI.UIAvatar();
             this.panel2 = new System.Windows.Forms.Panel();
             this.uiDV = new Sunny.UI.UIDataGridView();
-            this.uiAvatar_Clear = new Sunny.UI.UIAvatar();
-            this.uiAvatar_Push = new Sunny.UI.UIAvatar();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uiDV)).BeginInit();
@@ -61,12 +59,10 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.uiAvatar_Push);
             this.panel1.Controls.Add(this.uiAvatar_Clear);
-            this.panel1.Controls.Add(this.uiAvatar_Update);
             this.panel1.Controls.Add(this.uiComboBox1);
             this.panel1.Controls.Add(this.uiAvatar_Delete);
             this.panel1.Controls.Add(this.uiAvatar_Add);
@@ -77,18 +73,86 @@
             this.panel1.Size = new System.Drawing.Size(1101, 110);
             this.panel1.TabIndex = 1;
             // 
-            // uiAvatar_Update
+            // label6
             // 
-            this.uiAvatar_Update.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiAvatar_Update.Location = new System.Drawing.Point(392, 17);
-            this.uiAvatar_Update.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiAvatar_Update.Name = "uiAvatar_Update";
-            this.uiAvatar_Update.Size = new System.Drawing.Size(60, 60);
-            this.uiAvatar_Update.Symbol = 74;
-            this.uiAvatar_Update.TabIndex = 3;
-            this.uiAvatar_Update.Text = "uiAvatar4";
-            this.uiAvatar_Update.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiAvatar_Update.Click += new System.EventHandler(this.uiAvatar_Update_Click);
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(687, 84);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 24);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "上传";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(604, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 24);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "生成";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(525, 84);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 24);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "清除";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(313, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 24);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "删除";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(234, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 24);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "添加";
+            // 
+            // uiAvatar_Push
+            // 
+            this.uiAvatar_Push.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiAvatar_Push.Location = new System.Drawing.Point(680, 17);
+            this.uiAvatar_Push.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiAvatar_Push.Name = "uiAvatar_Push";
+            this.uiAvatar_Push.Size = new System.Drawing.Size(60, 60);
+            this.uiAvatar_Push.Symbol = 38;
+            this.uiAvatar_Push.TabIndex = 5;
+            this.uiAvatar_Push.Text = "uiAvatar1";
+            this.uiAvatar_Push.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiAvatar_Push.Click += new System.EventHandler(this.uiAvatar_Push_Click);
+            // 
+            // uiAvatar_Clear
+            // 
+            this.uiAvatar_Clear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiAvatar_Clear.Location = new System.Drawing.Point(518, 17);
+            this.uiAvatar_Clear.MinimumSize = new System.Drawing.Size(1, 1);
+            this.uiAvatar_Clear.Name = "uiAvatar_Clear";
+            this.uiAvatar_Clear.Size = new System.Drawing.Size(60, 60);
+            this.uiAvatar_Clear.Symbol = 81;
+            this.uiAvatar_Clear.TabIndex = 4;
+            this.uiAvatar_Clear.Text = "uiAvatar1";
+            this.uiAvatar_Clear.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
+            this.uiAvatar_Clear.Click += new System.EventHandler(this.uiAvatar_Clear_Click);
             // 
             // uiComboBox1
             // 
@@ -159,45 +223,45 @@
             // 
             // uiDV
             // 
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.uiDV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.uiDV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.uiDV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.uiDV.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(59)))), ((int)(((byte)(72)))));
             this.uiDV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.uiDV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.uiDV.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.uiDV.DefaultCellStyle = dataGridViewCellStyle3;
             this.uiDV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.uiDV.EnableHeadersVisualStyles = false;
             this.uiDV.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.uiDV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiDV.Location = new System.Drawing.Point(0, 0);
             this.uiDV.Name = "uiDV";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.uiDV.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiDV.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.uiDV.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.uiDV.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.uiDV.RowTemplate.Height = 23;
             this.uiDV.ScrollBarRectColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.uiDV.SelectedIndex = -1;
@@ -206,98 +270,7 @@
             this.uiDV.Style = Sunny.UI.UIStyle.Custom;
             this.uiDV.TabIndex = 0;
             this.uiDV.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            // 
-            // uiAvatar_Clear
-            // 
-            this.uiAvatar_Clear.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiAvatar_Clear.Location = new System.Drawing.Point(518, 17);
-            this.uiAvatar_Clear.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiAvatar_Clear.Name = "uiAvatar_Clear";
-            this.uiAvatar_Clear.Size = new System.Drawing.Size(60, 60);
-            this.uiAvatar_Clear.Symbol = 81;
-            this.uiAvatar_Clear.TabIndex = 4;
-            this.uiAvatar_Clear.Text = "uiAvatar1";
-            this.uiAvatar_Clear.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiAvatar_Clear.Click += new System.EventHandler(this.uiAvatar_Clear_Click);
-            // 
-            // uiAvatar_Push
-            // 
-            this.uiAvatar_Push.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.uiAvatar_Push.Location = new System.Drawing.Point(680, 17);
-            this.uiAvatar_Push.MinimumSize = new System.Drawing.Size(1, 1);
-            this.uiAvatar_Push.Name = "uiAvatar_Push";
-            this.uiAvatar_Push.Size = new System.Drawing.Size(60, 60);
-            this.uiAvatar_Push.Symbol = 38;
-            this.uiAvatar_Push.TabIndex = 5;
-            this.uiAvatar_Push.Text = "uiAvatar1";
-            this.uiAvatar_Push.ZoomScaleRect = new System.Drawing.Rectangle(0, 0, 0, 0);
-            this.uiAvatar_Push.Click += new System.EventHandler(this.uiAvatar_Push_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(234, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 24);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "添加";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(313, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 24);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "删除";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(398, 83);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 24);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "更新";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
-            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(525, 84);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "清除";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Location = new System.Drawing.Point(604, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "生成";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Bahnschrift Light Condensed", 15F);
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label6.Location = new System.Drawing.Point(687, 84);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 24);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "上传";
+            this.uiDV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.uiDV_CellContentClick);
             // 
             // MainFrm
             // 
@@ -325,13 +298,11 @@
         private Sunny.UI.UIAvatar uiAvatar_Add;
         private Sunny.UI.UIComboBox uiComboBox1;
         private Sunny.UI.UIDataGridView uiDV;
-        private Sunny.UI.UIAvatar uiAvatar_Update;
         private Sunny.UI.UIAvatar uiAvatar_Clear;
         private Sunny.UI.UIAvatar uiAvatar_Push;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
