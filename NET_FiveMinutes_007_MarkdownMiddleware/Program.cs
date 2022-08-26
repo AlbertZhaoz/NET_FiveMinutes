@@ -62,8 +62,17 @@ const string template = @"weather/{city}/{days:int:range(1,4)}";
 async Task AlbertHandlerAsync(HttpContext context)
 {
     var city = (string)context.GetRouteData().Values["city"];
-    var days = DateTime.Now.AddDays(int.Parse(context.GetRouteData().Values["days"].ToString())).ToString();
-    await context.Response.WriteAsync($"{city}\r\n{days}");
+    if (city != null)
+    {
+        var days = DateTime.Now.AddDays(int.Parse(city.ToString())).ToString();
+        await context.Response.WriteAsync($"{city}\r\n{days}");
+    }
+    else
+    {
+        await context.Response.WriteAsync("CityÎª¿Õ");
+    }
+    
+   
 }
 
 app.UseAuthorization();
