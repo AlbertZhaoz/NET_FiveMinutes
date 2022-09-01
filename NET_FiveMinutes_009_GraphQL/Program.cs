@@ -1,13 +1,12 @@
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.EntityFrameworkCore;
-using NET_FiveMinutes_009_GraphQL.GraphQL.Mutations;
-using NET_FiveMinutes_009_GraphQL.GraphQL.Queries;
-using NET_FiveMinutes_009_GraphQL.Models;
+using NET_FiveMinutes_009_GraphQL.Data;
+using NET_FiveMinutes_009_GraphQL.GraphQL.Mutation;
+using NET_FiveMinutes_009_GraphQL.GraphQL.Query;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add some configuration
-builder.Configuration.AddJsonFile("CfgFiles\\DbConnect.json",true,true);
+// 官方使用文档
+https://chillicream.com/docs/hotchocolate/defining-a-schema/mutations
 
 // Add services to the container.
 
@@ -16,26 +15,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<Tool_LuDbContext>(opt=>
+// SqlServer
+builder.Services.AddDbContext<AppDbContext>(opt=>
 {
-    opt.UseSqlServer(builder.Configuration.GetSection("DbConnectStr:SqlServerStr:ConnectStr").Value);
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("ToolLuConStr"));
 });
 
-//{
-//    // 测试数据库连接是否正常
-//    var dbtest = builder.Services.BuildServiceProvider().GetRequiredService<Tool_LuDbContext>();
-
-//    var test  = dbtest.ToolLus;
-
-//    dbtest.AddAsync(new Tool_Lu(){Title = "test",TitleLink = "www.test.com",Sort = "[Test]"});
-//    dbtest.SaveChangesAsync();
-//}
-
-// 增加GraphQL配置
+// GraphQL
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<AlbertQuery>()
-    .AddMutationType<AlbertMutation>();
+    .AddQueryType<QueryToolLus>()
+    .AddMutationType<MutationToolLus>();
 
 var app = builder.Build();
 
@@ -46,11 +36,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// 启用GraphQL中间件
-app.MapGraphQL();
-
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseWebSockets();
+app.UseRouting();
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGraphQL("/graphql");
+});
 
 app.Run();

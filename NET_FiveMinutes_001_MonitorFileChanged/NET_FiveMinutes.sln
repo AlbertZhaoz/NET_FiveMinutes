@@ -19,7 +19,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET_FiveMinutes_007_Markdow
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET_FiveMinutes_008_UseIdentity", "..\NET_FiveMinutes_008_UseIdentity\NET_FiveMinutes_008_UseIdentity.csproj", "{4150C61C-A9EC-4CAE-A29F-5AF55A399EED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_009_GraphQL", "..\NET_FiveMinutes_009_GraphQL\NET_FiveMinutes_009_GraphQL.csproj", "{6158E2CE-E677-40F9-9203-0EB3D94AD73C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET_FiveMinutes_009_GraphQL", "..\NET_FiveMinutes_009_GraphQL\NET_FiveMinutes_009_GraphQL.csproj", "{FB16D0C8-2087-4687-8FA6-670E0FC7F465}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +59,10 @@ Global
 		{4150C61C-A9EC-4CAE-A29F-5AF55A399EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4150C61C-A9EC-4CAE-A29F-5AF55A399EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4150C61C-A9EC-4CAE-A29F-5AF55A399EED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6158E2CE-E677-40F9-9203-0EB3D94AD73C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6158E2CE-E677-40F9-9203-0EB3D94AD73C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6158E2CE-E677-40F9-9203-0EB3D94AD73C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6158E2CE-E677-40F9-9203-0EB3D94AD73C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB16D0C8-2087-4687-8FA6-670E0FC7F465}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB16D0C8-2087-4687-8FA6-670E0FC7F465}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB16D0C8-2087-4687-8FA6-670E0FC7F465}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB16D0C8-2087-4687-8FA6-670E0FC7F465}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
